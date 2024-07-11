@@ -20,14 +20,14 @@ def main():
         category = st.selectbox("Categorie", options=[
                                 "Desert", "Fel principal", "Aperitiv", "Salată"])
         
-        image = st.file_uploader("Încarcă o imagine pentru rețetă", type=['jpg', 'jpeg', 'png'])
+        uploaded_file = st.file_uploader("Încarcă o imagine pentru rețetă (Limită de 10MB • JPG, JPEG, PNG)", type=['jpg', 'jpeg', 'png'])
         
         if st.button("Adaugă Rețeta"):
             try:
                 ingredients_list = [
                     ing.strip() for ing in ingredients.split('\n') if ing.strip()]
                 
-                if image is not None:
+                if uploaded_file is not None:
                     image = Image.open(image)
                     recipe_manager.add_recipe({
                         "title": title,
