@@ -16,7 +16,7 @@ def main():
     st.title(":green[_Rețete Culinare_]")
     page_img = Image.open('food_ingredients.jpg')
     st.image(page_img)
-    st.markdown("Food.jpg")
+    
 
     with st.sidebar:
         st.header("Adaugă o rețetă nouă")
