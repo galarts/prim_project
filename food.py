@@ -9,18 +9,20 @@ from PIL import Image
 
 # st.title("FOOD  :green[& _Recepies_ ]")
 
-page_img = Image.open('food_ingredients.jpg')
-st.image(page_img)
+
 
 
 def main():
-    st.title(":green[_Organizator de Rețete Culinare_]")
+    st.title(":green[_Rețete Culinare_]")
+    page_img = Image.open('food_ingredients.jpg')
+    st.image(page_img)
+    st.markdown("Food.jpg")
 
     with st.sidebar:
         st.header("Adaugă o rețetă nouă")
         title = st.text_input("Titlul Rețetei")
-        ingredients = st.text_area("Ingredientele", height=150)
-        steps = st.text_area("Pașii de preparare", height=150)
+        ingredients = st.text_area("Ingredientele", height=100)
+        steps = st.text_area(":green[Pașii de preparare]", height=100)
         time = st.number_input(
             "Timp de preparare (minute)", min_value=1, step=1)
         category = st.selectbox("Categorie", options=[

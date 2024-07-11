@@ -101,5 +101,20 @@
             "ingredient2"
         ],
         "instructions": "Mix ingredients."
+    },
+    {
+        "title": "friptura de iepure",
+        "ingredients": [
+            "carne de iepure",
+            "ceapa",
+            "morcov",
+            "ulei de masline",
+            "piper negru boabe",
+            "piper negru macinat",
+            "frunze de dafin"
+        ],
+        "steps": "la tigaie sau ceaun se rumeneste carnea de iepure in ulei, dupa adaugam ceapa cu morcov si restul condimente dupa gust",
+        "time": 120,
+        "category": "Fel principal"
     }
 ]

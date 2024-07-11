@@ -17,8 +17,7 @@ class RecipeManager:
             with open(self.filename, 'w') as file:
                 json.dump(self.recipes, file, indent=4)
         else:
-            raise ValueError(
-                "Rețeta trebuie să conțină toate câmpurile necesare: titlu, ingrediente, pași, timp, categorie.")
-
+            raise ValueError
+                
     def get_recipes(self):
         return self.recipes
