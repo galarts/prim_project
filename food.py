@@ -8,8 +8,11 @@ def main():
     st.title(":green[_Rețete Culinare_]")
     page_img = Image.open('food_ingredients.jpg')
     st.image(page_img)
+   
 
-    with st.sidebar:
+    recipe_manager = RecipeManager()
+    recipes = recipe_manager.get_recipes()
+    with st.sidebar: 
         st.header("Adaugă o rețetă nouă")
         
         title = st.text_input("Titlul Rețetei")
@@ -26,15 +29,16 @@ def main():
             try:
                 ingredients_list = [
                     ing.strip() for ing in ingredients.split('\n') if ing.strip()]
-                
+               
                 if uploaded_file is not None:
-                    image = Image.open(image)
+                    image = Image.open(uploaded_file)
                     recipe_manager.add_recipe({
                         "title": title,
                         "ingredients": ingredients_list,
                         "steps": steps,
                         "time": time,
-                        "category": category
+                        "category": category,
+                        "image_path": uploaded_file.name,
                     }, image)
                 else:
                     recipe_manager.add_recipe({
@@ -48,6 +52,7 @@ def main():
 
 
                 st.success("Rețetă adăugată cu succes!")
+                recipes = recipe_manager.get_recipes()
             except ValueError as e:
                 st.error(str(e))
 
@@ -59,7 +64,7 @@ def main():
                                    "Toate", "Desert", "Fel principal", "Aperitiv", "Salată"])
     available_ingredients = st.text_input(
         "Rețetă după ingrediente disponibile (separați prin virgulă)")
-    recipes = recipe_manager.get_recipes()
+    # recipes = recipe_manager.get_recipes()
     if search_term:
         recipes = search_by_name(recipes, search_term)
     if filter_time < 240:

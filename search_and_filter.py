@@ -10,10 +10,10 @@ def filter_by_category(recipes, category):
     return [recipe for recipe in recipes if 'category' in recipe and category.lower() in recipe['category'].lower()]
 
 
-def filter_by_ingredients(recipes, available_ingredients):
-    available_ingredients_set = set(
-        ingredient.strip().lower() for ingredient in available_ingredients)
-    return [
-        recipe for recipe in recipes
-        if available_ingredients_set.issubset(set(ingredient.strip().lower() for ingredient in recipe.get('ingredients', [])))
-    ]
+def filter_by_ingredients(recipes, keywords):
+    filtered_recipes = []
+    for recipe in recipes:
+        ingredients = recipe.get('ingredients', [])
+        if all(any(keyword.strip().lower() in ingredient.strip().lower() for ingredient in ingredients) for keyword in keywords):
+            filtered_recipes.append(recipe)
+    return filtered_recipes

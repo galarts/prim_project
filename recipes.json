@@ -31,15 +31,6 @@
         ],
         "instructions": "Mix ingredients."
     },
-  
-    {
-        "title": "New Recipe",
-        "ingredients": [
-            "ingredient1",
-            "ingredient2"
-        ],
-        "instructions": "Mix ingredients."
-    },
     {
         "title": "New Recipe",
         "ingredients": [
@@ -99,16 +90,21 @@
     {
         "title": "friptura de iepure",
         "ingredients": [
-            "carne de iepure",
-            "ceapa",
-            "morcov",
-            "ulei de masline",
-            "piper negru boabe",
-            "piper negru macinat",
-            "frunze de dafin"
+            "carne de iepure, ceapa, morcov, ulei de masline, piper negru boabe, piper negru macinat, frunze de dafin,vin alb"
         ],
-        "steps": "la tigaie sau ceaun se rumeneste carnea de iepure in ulei, dupa adaugam ceapa cu morcov si restul condimente dupa gust",
+        "steps": "la tigaie sau ceaun se rumeneste carnea de iepure in ulei, dupa adaugam vin alb,ceapa cu morcov si restul condimente dupa gust",
         "time": 120,
-        "category": "Fel principal"
+        "category": "Fel principal",
+        "image_path": "recipe_images\\friptura_de_iepure.jpg"
+    },
+    {
+        "title": "salata de legume",
+        "ingredients": [
+            "rosii,ardei verde,castraveti,ceapa verde, patrunjel, ulei, oregano si sare"
+        ],
+        "steps": "toate legumele se tau in forma de cuburi,maruntim verdeata si adaugam ingrediente dupa gust",
+        "time": 30,
+        "category": "Salat\u0103",
+        "image_path": "recipe_images\\salata_de_legume.jpg"
     }
 ]
